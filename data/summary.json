@@ -1,0 +1,137 @@
+{
+  "keyFigures": [
+    {
+      "metric": "Material grades reviewed (supplied list)",
+      "value": 132
+    },
+    {
+      "metric": "Gap-list grades suggested (not counted)",
+      "value": 16
+    },
+    {
+      "metric": "Property records (grade/condition rows)",
+      "value": 80
+    },
+    {
+      "metric": "Numeric property values recorded",
+      "value": 508
+    },
+    {
+      "metric": "Grain / crystal-structure family records",
+      "value": 33
+    },
+    {
+      "metric": "Formula blocks / independent checks executed",
+      "value": 19
+    },
+    {
+      "metric": "Testing-method rows",
+      "value": 44
+    },
+    {
+      "metric": "Standards reviewed (14 supplied + supporting)",
+      "value": 27
+    },
+    {
+      "metric": "Errors / corrections logged",
+      "value": 22
+    },
+    {
+      "metric": "Industry-consideration entries (advisory)",
+      "value": 35
+    }
+  ],
+  "coverageTable": [
+    {
+      "domain": "Master-list designations",
+      "itemsReviewed": 132,
+      "verified": 0,
+      "conditionallyVerified": 103,
+      "incorrect": 3,
+      "unverified": 26,
+      "strictCv": "0.0%",
+      "conditionalCv": "78.0%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "Property records (Sheet 3)",
+      "itemsReviewed": 80,
+      "verified": 0,
+      "conditionallyVerified": 54,
+      "incorrect": 0,
+      "unverified": 26,
+      "strictCv": "0.0%",
+      "conditionalCv": "67.5%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "Grain / crystal-structure records",
+      "itemsReviewed": 33,
+      "verified": 0,
+      "conditionallyVerified": 33,
+      "incorrect": 0,
+      "unverified": 0,
+      "strictCv": "0.0%",
+      "conditionalCv": "100.0%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "Formula checks (Sheet 5)",
+      "itemsReviewed": 19,
+      "verified": 19,
+      "conditionallyVerified": 0,
+      "incorrect": 0,
+      "unverified": 0,
+      "strictCv": "100.0%",
+      "conditionalCv": "100.0%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "Testing-method references",
+      "itemsReviewed": 44,
+      "verified": 0,
+      "conditionallyVerified": 35,
+      "incorrect": 0,
+      "unverified": 9,
+      "strictCv": "0.0%",
+      "conditionalCv": "79.5%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "Standards (supplied + supporting)",
+      "itemsReviewed": 27,
+      "verified": 0,
+      "conditionallyVerified": 25,
+      "incorrect": 0,
+      "unverified": 2,
+      "strictCv": "0.0%",
+      "conditionalCv": "92.6%",
+      "reconciles": "OK"
+    },
+    {
+      "domain": "TOTAL",
+      "itemsReviewed": 335,
+      "verified": 19,
+      "conditionallyVerified": 250,
+      "incorrect": 3,
+      "unverified": 63,
+      "strictCv": "5.7%",
+      "conditionalCv": "80.3%",
+      "reconciles": "OK"
+    }
+  ],
+  "notes": [
+    {
+      "topic": "Counting rule",
+      "detail": "Cv(strict) = N_verified / N_items_reviewed × 100% — 'Verified' means checked against an authoritative document or independently recalculated (all current Verified items are arithmetic/unit checks). Cv(conditional) = (Verified + Conditionally verified) / N_items. Gap-list grades (not in upload) and advisory industry rows are excluded because they are suggestions, not reviewed items. Items are not weighted."
+    },
+    {
+      "topic": "Accuracy vs coverage",
+      "detail": "Verification coverage is NOT numerical accuracy. Numerical accuracy was not measured (no reference dataset or measurement comparison); property values are recalled handbook/standard values with stated confidence."
+    },
+    {
+      "topic": "Why 90–95% was not reached",
+      "detail": "No network/authoritative-document access in this session, so standards and datasheet values could not be checked against BIS/ASTM/manufacturer documents. Conditional coverage shows how much is consistent with recalled knowledge; the gap to strict coverage is the remaining verification work (Sheet 11, unresolved items)."
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+[
+  {
+    "application": "Robot chassis",
+    "criteria": "Stiffness-to-weight, weldability/joining, cost, vibration",
+    "candidate": "6061-T6 plate/extrusion",
+    "advantages": "Good E/ρ, machinable, corrosion-resistant, widely available",
+    "tradeoffs": "Weld HAZ softening; lower fatigue strength than steel",
+    "requiredTests": "Tensile/hardness on lot; weld NDT; modal/vibration test",
+    "costNote": "Low–medium (qualitative, unverified)"
+  },
+  {
+    "application": "Robot chassis",
+    "criteria": "(as above)",
+    "candidate": "5052-H32 / 5083 sheet",
+    "advantages": "Formable, weldable, good corrosion resistance",
+    "tradeoffs": "Lower strength than 6061-T6",
+    "requiredTests": "Bend test; weld inspection",
+    "costNote": "Low–medium"
+  },
+  {
+    "application": "Robot chassis",
+    "criteria": "(as above)",
+    "candidate": "CFRP laminate/sandwich",
+    "advantages": "Highest specific stiffness; low mass",
+    "tradeoffs": "Cost, joining, damage tolerance, galvanic with Al",
+    "requiredTests": "D3039/D7264/D2344 coupons; UT/thermography",
+    "costNote": "High"
+  },
+  {
+    "application": "Robot chassis",
+    "criteria": "(as above)",
+    "candidate": "IS 2062 E250 / A36 steel",
+    "advantages": "Lowest cost, easy welding, stiff",
+    "tradeoffs": "Heavy; corrosion protection needed",
+    "requiredTests": "Tensile/MTC; weld NDT",
+    "costNote": "Low"
+  },
+  {
+    "application": "Robotic arm",
+    "criteria": "Stiffness (deflection), mass, fatigue, repeatability",
+    "candidate": "7075-T6 / 6061-T6",
+    "advantages": "Light, strong; 6061 weldable",
+    "tradeoffs": "7075 SCC-sensitive, not fusion-weldable",
+    "requiredTests": "Tensile/hardness; conductivity temper check",
+    "costNote": "Medium"
+  },
+  {
+    "application": "Robotic arm",
+    "criteria": "(as above)",
+    "candidate": "CFRP tubes",
+    "advantages": "High specific stiffness, damping",
+    "tradeoffs": "Impact damage, joints, cost",
+    "requiredTests": "D3039/D7264; ILSS; NDT",
+    "costNote": "High"
+  },
+  {
+    "application": "Robotic arm",
+    "criteria": "(as above)",
+    "candidate": "Ti-6Al-4V",
+    "advantages": "High specific strength, corrosion resistance",
+    "tradeoffs": "Low stiffness vs steel at same section, cost",
+    "requiredTests": "Tensile, microstructure, fatigue",
+    "costNote": "High"
+  },
+  {
+    "application": "Shaft",
+    "criteria": "Fatigue strength, torsion, notch sensitivity, wear/corrosion",
+    "candidate": "AISI 1045 / C45 (Q&T)",
+    "advantages": "Economical, machinable",
+    "tradeoffs": "Moderate hardenability",
+    "requiredTests": "Tensile, hardness, impact if specified",
+    "costNote": "Low"
+  },
+  {
+    "application": "Shaft",
+    "criteria": "(as above)",
+    "candidate": "AISI 4140 / 42CrMo4 or 4340 (Q&T)",
+    "advantages": "High strength/toughness; deeper hardening",
+    "tradeoffs": "Temper embrittlement/H2 risk at high strength",
+    "requiredTests": "Tensile, Charpy, hardness; UT/MPI for critical bars",
+    "costNote": "Medium"
+  },
+  {
+    "application": "Shaft",
+    "criteria": "(as above)",
+    "candidate": "17-4 PH H1025 / 316L",
+    "advantages": "Corrosion resistance (17-4 strong, 316L weak)",
+    "tradeoffs": "316L low strength; 17-4 SCC risk in some tempers",
+    "requiredTests": "Tensile, hardness, corrosion test per service",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "Gear",
+    "criteria": "Contact & bending fatigue, hardness, wear, quiet running",
+    "candidate": "8620 / 20MnCr5 / 16MnCr5 (carburised)",
+    "advantages": "Hard case + tough core",
+    "tradeoffs": "Distortion; case-depth control",
+    "requiredTests": "Case depth, core hardness, microstructure, MPI after grinding",
+    "costNote": "Medium"
+  },
+  {
+    "application": "Gear",
+    "criteria": "(as above)",
+    "candidate": "18CrNiMo7-6 / 9310 (carburised)",
+    "advantages": "Heavy-duty gears, high core toughness",
+    "tradeoffs": "Cost, heat-treat complexity",
+    "requiredTests": "As above + cleanliness",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "Gear",
+    "criteria": "(as above)",
+    "candidate": "POM / PA66 (light duty)",
+    "advantages": "Low noise, self-lubricating",
+    "tradeoffs": "Creep, temperature, moisture",
+    "requiredTests": "Wear/creep test; D638 (conditioned)",
+    "costNote": "Low"
+  },
+  {
+    "application": "Bearing",
+    "criteria": "Rolling-contact fatigue, hardness, cleanliness, dimensional stability",
+    "candidate": "52100 / 100Cr6",
+    "advantages": "Industry standard bearing steel",
+    "tradeoffs": "Limited corrosion resistance",
+    "requiredTests": "Hardness, microstructure, cleanliness; bearing life test",
+    "costNote": "Low–medium"
+  },
+  {
+    "application": "Bearing",
+    "criteria": "(as above)",
+    "candidate": "440C stainless",
+    "advantages": "Hardness + moderate corrosion resistance",
+    "tradeoffs": "Lower life than 52100 in many cases",
+    "requiredTests": "Hardness, microstructure",
+    "costNote": "Medium"
+  },
+  {
+    "application": "Bearing",
+    "criteria": "(as above)",
+    "candidate": "Si3N4 hybrid / C93200 bushings / PTFE-PEEK liners",
+    "advantages": "Si3N4: low density, non-magnetic; bronze: sliding; polymers: dry running",
+    "tradeoffs": "Ceramic brittleness; bronze load/speed limits",
+    "requiredTests": "Weibull/proof test; wear test (G99 etc.)",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "Welded structure",
+    "criteria": "Weldability, toughness, CE, thickness effects",
+    "candidate": "IS 2062 E250/E350, A36, A572 Gr 50",
+    "advantages": "Economical, code-based",
+    "tradeoffs": "Need quality designation, thickness and impact specs",
+    "requiredTests": "MTC, CE, Charpy, weld NDT (MT/UT/RT)",
+    "costNote": "Low"
+  },
+  {
+    "application": "Welded structure",
+    "criteria": "(as above)",
+    "candidate": "304L/316L, 2205",
+    "advantages": "Corrosion resistance",
+    "tradeoffs": "Sensitisation, HAZ issues, distortion",
+    "requiredTests": "PMI, IGC/pitting tests where required",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "Welded structure",
+    "criteria": "(as above)",
+    "candidate": "5083 / 5052; 6061 (with HAZ reduction)",
+    "advantages": "Light, good corrosion resistance",
+    "tradeoffs": "HAZ strength loss in 6061",
+    "requiredTests": "Weld procedure qualification, hardness traverse",
+    "costNote": "Medium"
+  },
+  {
+    "application": "Corrosion-exposed component",
+    "criteria": "Environment (Cl⁻, pH, T), galvanic, SCC",
+    "candidate": "316L / 2205 / 2507",
+    "advantages": "PREN ranking; duplex stronger",
+    "tradeoffs": "SCC/pitting limits; cost",
+    "requiredTests": "ASTM G48, A262 as applicable",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "Corrosion-exposed component",
+    "criteria": "(as above)",
+    "candidate": "Ti Grade 2 / Ni alloys (625, C-276, Monel 400) / C95400",
+    "advantages": "Excellent seawater/chemical resistance",
+    "tradeoffs": "High cost; galvanic couples",
+    "requiredTests": "Coupon immersion; crevice tests",
+    "costNote": "High"
+  },
+  {
+    "application": "High-temperature component",
+    "criteria": "Creep, oxidation, thermal fatigue, cost",
+    "candidate": "IN718 / IN625 / 310S / 321",
+    "advantages": "IN718 high strength to ≈650 °C; 310S oxidation resistance",
+    "tradeoffs": "Cost; machinability; creep data required",
+    "requiredTests": "Creep (E139), tensile at T, oxidation",
+    "costNote": "High"
+  },
+  {
+    "application": "High-temperature component",
+    "criteria": "(as above)",
+    "candidate": "H13 (hot-work tooling), SiC/Si3N4",
+    "advantages": "H13 thermal-fatigue resistance; ceramics for extreme temperature",
+    "tradeoffs": "Brittleness of ceramics; H13 heat-check",
+    "requiredTests": "Hardness, thermal-fatigue/shock tests",
+    "costNote": "Medium–high"
+  },
+  {
+    "application": "High-temperature component",
+    "criteria": "(as above)",
+    "candidate": "Mo / W (inert atmosphere only)",
+    "advantages": "Very high melting point",
+    "tradeoffs": "Oxidise in air; brittle near RT",
+    "requiredTests": "Atmosphere control, bend/tensile",
+    "costNote": "High"
+  },
+  {
+    "application": "Performance indices (formula-driven from Sheet 3) — stiffness- or strength-limited lightweight design",
+    "criteria": "Not recorded",
+    "candidate": "Not recorded",
+    "advantages": "Not recorded",
+    "tradeoffs": "Not recorded",
+    "requiredTests": "Not recorded",
+    "costNote": "Not recorded"
+  },
+  {
+    "application": "E^½/ρ: stiffness-limited light beam; σ^⅔/ρ: strength-limited light beam; E/ρ: stiffness-limited tie/column. CFRP is valid along fibres only. Strength = YS where available, else UTS. Higher is better.",
+    "criteria": "Not recorded",
+    "candidate": "Not recorded",
+    "advantages": "Not recorded",
+    "tradeoffs": "Not recorded",
+    "requiredTests": "Not recorded",
+    "costNote": "Not recorded"
+  },
+  {
+    "application": "Material",
+    "criteria": "Condition",
+    "candidate": "ρ (Mg/m³)",
+    "advantages": "E (GPa)",
+    "tradeoffs": "Strength σ (MPa)",
+    "requiredTests": "E/ρ",
+    "costNote": "E^½/ρ"
+  },
+  {
+    "application": "ASTM A36",
+    "criteria": "Plate/shapes (specified)",
+    "candidate": 7.85,
+    "advantages": 200,
+    "tradeoffs": 250,
+    "requiredTests": 25.4777070063694,
+    "costNote": 1.80154593932878
+  },
+  {
+    "application": "AISI 4140",
+    "criteria": "Q&T (oil quench, ≈650 °C temper)",
+    "candidate": 7.85,
+    "advantages": 205,
+    "tradeoffs": 655,
+    "requiredTests": 26.1146496815287,
+    "costNote": 1.8239262500989
+  },
+  {
+    "application": "17-4 PH (UNS S17400)",
+    "criteria": "Condition H1025 (A564 min)",
+    "candidate": 7.78,
+    "advantages": 197,
+    "tradeoffs": 1000,
+    "requiredTests": 25.3213367609254,
+    "costNote": 1.80407054596635
+  },
+  {
+    "application": "AA 6061-T6",
+    "criteria": "Sheet/plate/extrusion (typical)",
+    "candidate": 2.7,
+    "advantages": 68.9,
+    "tradeoffs": 276,
+    "requiredTests": 25.5185185185185,
+    "costNote": 3.07429718065883
+  },
+  {
+    "application": "AA 7075-T6",
+    "criteria": "Sheet/plate (typical)",
+    "candidate": 2.81,
+    "advantages": 71.7,
+    "tradeoffs": 503,
+    "requiredTests": 25.5160142348754,
+    "costNote": 3.01337553452193
+  },
+  {
+    "application": "AA 5083-H111",
+    "criteria": "EN 485-2 minima",
+    "candidate": 2.66,
+    "advantages": 71,
+    "tradeoffs": 125,
+    "requiredTests": 26.6917293233083,
+    "costNote": 3.16772547863773
+  },
+  {
+    "application": "AZ31B",
+    "criteria": "O-temper sheet (typical)",
+    "candidate": 1.77,
+    "advantages": 45,
+    "tradeoffs": 150,
+    "requiredTests": 25.4237288135593,
+    "costNote": 3.78994572457591
+  },
+  {
+    "application": "Ti-6Al-4V Gr 5",
+    "criteria": "Annealed (B265 min)",
+    "candidate": 4.43,
+    "advantages": 113.8,
+    "tradeoffs": 825,
+    "requiredTests": 25.6884875846501,
+    "costNote": 2.40806056037825
+  },
+  {
+    "application": "CFRP UD epoxy (Vf≈0.6)",
+    "criteria": "0° direction",
+    "candidate": 1.56,
+    "advantages": 135,
+    "tradeoffs": 1800,
+    "requiredTests": 86.5384615384615,
+    "costNote": 7.44804489655272
+  },
+  {
+    "application": "UNS N07718",
+    "criteria": "Solution + aged (AMS-type minimum, approx.)",
+    "candidate": 8.19,
+    "advantages": 200,
+    "tradeoffs": 1034,
+    "requiredTests": 24.4200244200244,
+    "costNote": 1.72675648641404
+  },
+  {
+    "application": "PEEK",
+    "criteria": "Unfilled",
+    "candidate": 1.3,
+    "advantages": 3.6,
+    "tradeoffs": 100,
+    "requiredTests": 2.76923076923077,
+    "costNote": 1.45951276623156
+  }
+]

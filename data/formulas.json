@@ -1,0 +1,1614 @@
+{
+  "blocks": [
+    {
+      "id": "B1",
+      "title": "Density & unit conversion",
+      "equation": "Equation: ρ = m / V ;  1 g/cm³ = 1000 kg/m³ (ρ in kg/m³, m in kg, V in m³)",
+      "assumptions": "Homogeneous solid, no voids; mass and dimensions measured at same temperature.",
+      "steps": [
+        {
+          "quantity": "Mass",
+          "symbol": "m",
+          "value": 0.785,
+          "unit": "kg",
+          "type": "Input",
+          "note": "Assumed example (steel block)",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Length",
+          "symbol": "Lx",
+          "value": 0.1,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Width",
+          "symbol": "Ly",
+          "value": 0.05,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Height",
+          "symbol": "Lz",
+          "value": 0.02,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Volume",
+          "symbol": "V",
+          "value": 0.0001,
+          "unit": "m³",
+          "type": "Calc",
+          "note": "V = Lx·Ly·Lz",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Density",
+          "symbol": "ρ",
+          "value": 7850,
+          "unit": "kg/m³",
+          "type": "Calc",
+          "note": "ρ = m/V",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Density (converted)",
+          "symbol": "ρ",
+          "value": 7.85,
+          "unit": "g/cm³",
+          "type": "Calc",
+          "note": "Conversion factor 1000",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: grams ÷ cm³",
+          "symbol": "ρ_chk",
+          "value": 7.85,
+          "unit": "g/cm³",
+          "type": "Check",
+          "note": "Independent path in g and cm",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − rhog| / rhog",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B2",
+      "title": "Linear thermal expansion",
+      "equation": "Equation: ΔL = α·L0·ΔT  (α in K⁻¹; ΔT in K)",
+      "assumptions": "Constant α is acceptable for modest ΔT (≈ <100–200 K) away from phase changes; use dL/L tables for wide ranges, cryogenic service, Invar/polymers.",
+      "steps": [
+        {
+          "quantity": "Original length",
+          "symbol": "L0",
+          "value": 1,
+          "unit": "m",
+          "type": "Input",
+          "note": "Assumed example",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "CTE of AA 6061-T6 (Sheet 3)",
+          "symbol": "α",
+          "value": 23.6,
+          "unit": "µm/(m·K)",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Temperature change",
+          "symbol": "ΔT",
+          "value": 80,
+          "unit": "K",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Length change",
+          "symbol": "ΔL",
+          "value": 0.001888,
+          "unit": "m",
+          "type": "Calc",
+          "note": "α converted to K⁻¹",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Length change",
+          "symbol": "ΔL",
+          "value": 1.888,
+          "unit": "mm",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: µm route",
+          "symbol": "ΔL_chk",
+          "value": 1.888,
+          "unit": "mm",
+          "type": "Check",
+          "note": "α[µm/m·K]×L0[m]×ΔT[K] = µm",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − dLmm| / dLmm",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B3",
+      "title": "Electrical resistance of a conductor",
+      "equation": "Equation: R = ρe·L / A   (ρe = electrical resistivity, Ω·m — NOT mass density)",
+      "assumptions": "Uniform round wire, DC, 20 °C; temperature coefficient not included.",
+      "steps": [
+        {
+          "quantity": "Resistivity (annealed Cu, 100% IACS)",
+          "symbol": "ρe",
+          "value": 1.7241e-8,
+          "unit": "Ω·m",
+          "type": "Input",
+          "note": "International Annealed Copper Standard value",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Length",
+          "symbol": "L",
+          "value": 100,
+          "unit": "m",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Wire diameter",
+          "symbol": "d",
+          "value": 0.002,
+          "unit": "m",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Cross-section",
+          "symbol": "A",
+          "value": 0.00000314159265358979,
+          "unit": "m²",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Resistance",
+          "symbol": "R",
+          "value": 0.548798074769474,
+          "unit": "Ω",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: Ω·mm²/m route",
+          "symbol": "R_chk",
+          "value": 0.548798074769474,
+          "unit": "Ω",
+          "type": "Check",
+          "note": "ρ converted to Ω·mm²/m",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − R| / R",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B4",
+      "title": "Specific strength & specific stiffness (AA 6061-T6)",
+      "equation": "Equation: σ/ρ and E/ρ  — here σ = UTS (state the strength definition used)",
+      "assumptions": "Consistent SI units; only meaningful for comparison at equal load path (see Material Selection indices).",
+      "steps": [
+        {
+          "quantity": "UTS (Sheet 3)",
+          "symbol": "σ",
+          "value": 310,
+          "unit": "MPa",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Density (Sheet 3)",
+          "symbol": "ρ",
+          "value": 2700,
+          "unit": "kg/m³",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "E (Sheet 3)",
+          "symbol": "E",
+          "value": 68.9,
+          "unit": "GPa",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Specific strength",
+          "symbol": "σ/ρ",
+          "value": 114.814814814815,
+          "unit": "kN·m/kg",
+          "type": "Calc",
+          "note": "MPa ÷ (kg/m³) = 1000 N·m/kg",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Specific stiffness",
+          "symbol": "E/ρ",
+          "value": 25.5185185185185,
+          "unit": "MN·m/kg",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: MPa ÷ (g/cm³)",
+          "symbol": "(σ/ρ)_chk",
+          "value": 114.814814814815,
+          "unit": "kN·m/kg",
+          "type": "Check",
+          "note": "Numerically equal",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: GPa ÷ (g/cm³)",
+          "symbol": "(E/ρ)_chk",
+          "value": 25.5185185185185,
+          "unit": "MN·m/kg",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − ss| / ss",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        },
+        {
+          "quantity": "Independent check: |chk2 − sf| / sf",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B5",
+      "title": "Engineering stress, strain, Hooke's law",
+      "equation": "Equation: σ = F/A0 ;  ε = σ/E ;  ΔL = ε·L0",
+      "assumptions": "Axial, uniform stress, linear-elastic (σ below yield), small strain.",
+      "steps": [
+        {
+          "quantity": "Axial force",
+          "symbol": "F",
+          "value": 20,
+          "unit": "kN",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Original area",
+          "symbol": "A0",
+          "value": 100,
+          "unit": "mm²",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Gauge length",
+          "symbol": "L0",
+          "value": 50,
+          "unit": "mm",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "E, AISI 1045 HR (Sheet 3)",
+          "symbol": "E",
+          "value": 205,
+          "unit": "GPa",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Stress",
+          "symbol": "σ",
+          "value": 200,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "N/mm²",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Strain",
+          "symbol": "ε",
+          "value": 0.000975609756097561,
+          "unit": "–",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Elongation",
+          "symbol": "ΔL",
+          "value": 0.0487804878048781,
+          "unit": "mm",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: SI route ΔL = F·L0/(A·E)",
+          "symbol": "ΔL_chk",
+          "value": 0.0487804878048781,
+          "unit": "mm",
+          "type": "Check",
+          "note": "All SI then converted",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − dL| / dL",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B6",
+      "title": "Bending stress (rectangular beam)",
+      "equation": "Equation: σ = M·c / I ;  I = b·h³/12 ;  c = h/2",
+      "assumptions": "Prismatic, linear-elastic, Euler–Bernoulli, no stress concentration, load in a principal plane.",
+      "steps": [
+        {
+          "quantity": "Bending moment",
+          "symbol": "M",
+          "value": 1500,
+          "unit": "N·m",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Width",
+          "symbol": "b",
+          "value": 0.03,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Depth",
+          "symbol": "h",
+          "value": 0.05,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Second moment of area",
+          "symbol": "I",
+          "value": 3.125e-7,
+          "unit": "m⁴",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Distance to outer fibre",
+          "symbol": "c",
+          "value": 0.025,
+          "unit": "m",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Max bending stress",
+          "symbol": "σ",
+          "value": 120,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: σ = 6M/(b·h²)",
+          "symbol": "σ_chk",
+          "value": 120,
+          "unit": "MPa",
+          "type": "Check",
+          "note": "Section-modulus form",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − sig| / sig",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B7",
+      "title": "Torsional shear stress (solid round shaft)",
+      "equation": "Equation: τ = T·r / J ;  J = π·d⁴/32",
+      "assumptions": "Solid circular section, elastic, no keyway/shoulder stress concentration.",
+      "steps": [
+        {
+          "quantity": "Torque",
+          "symbol": "T",
+          "value": 500,
+          "unit": "N·m",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Diameter",
+          "symbol": "d",
+          "value": 0.03,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Polar moment",
+          "symbol": "J",
+          "value": 7.95215640439916e-8,
+          "unit": "m⁴",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Max shear stress",
+          "symbol": "τ",
+          "value": 94.3140403507528,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: τ = 16T/(π·d³)",
+          "symbol": "τ_chk",
+          "value": 94.3140403507528,
+          "unit": "MPa",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − tau| / tau",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B8",
+      "title": "Factor of safety (yield basis)",
+      "equation": "Equation: n = S_y / σ_working  (ductile metals; use UTS or fracture basis for brittle materials)",
+      "assumptions": "Static load; σ_working must include stress concentrations/dynamic factors for real design; compare with code-required factors.",
+      "steps": [
+        {
+          "quantity": "Yield, AISI 4140 Q&T (Sheet 3)",
+          "symbol": "S_y",
+          "value": 655,
+          "unit": "MPa",
+          "type": "Linked",
+          "note": "Linked (single tempering point)",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Working stress (from B6)",
+          "symbol": "σ",
+          "value": 120,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Linked to block B6",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Factor of safety",
+          "symbol": "n",
+          "value": 5.45833333333334,
+          "unit": "–",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: reciprocal route",
+          "symbol": "n_chk",
+          "value": 5.45833333333334,
+          "unit": "–",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − n| / n",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B9",
+      "title": "Thermal stress (fully restrained)",
+      "equation": "Equation: σ = E·α·ΔT",
+      "assumptions": "Full restraint, uniform temperature, linear-elastic, constant E and α, σ below yield; real restraint is partial.",
+      "steps": [
+        {
+          "quantity": "E, AISI 1045 HR (Sheet 3)",
+          "symbol": "E",
+          "value": 205,
+          "unit": "GPa",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "CTE, AISI 1045 HR (Sheet 3)",
+          "symbol": "α",
+          "value": 11.9,
+          "unit": "µm/(m·K)",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Temperature rise",
+          "symbol": "ΔT",
+          "value": 50,
+          "unit": "K",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Thermal stress",
+          "symbol": "σ",
+          "value": 121.975,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: SI route",
+          "symbol": "σ_chk",
+          "value": 121.975,
+          "unit": "MPa",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − sg| / sg",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B10",
+      "title": "Fatigue design parameter — modified Goodman factor of safety",
+      "equation": "Equation: 1/n = σa/Se + σm/Sut ;  Se ≈ 0.5·Sut (steel, Sut ≤ ~1400 MPa, rotating-beam specimen)",
+      "assumptions": "Infinite-life, proportional loading, uniaxial; real Se needs Marin factors (surface, size, load, reliability, notch). Illustrative inputs.",
+      "steps": [
+        {
+          "quantity": "Alternating stress",
+          "symbol": "σa",
+          "value": 100,
+          "unit": "MPa",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Mean stress",
+          "symbol": "σm",
+          "value": 150,
+          "unit": "MPa",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Ultimate strength",
+          "symbol": "Sut",
+          "value": 600,
+          "unit": "MPa",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Endurance limit estimate",
+          "symbol": "Se",
+          "value": 300,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "0.5 factor is a steel rule of thumb",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Goodman factor of safety",
+          "symbol": "n",
+          "value": 1.71428571428571,
+          "unit": "–",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Expected value on Goodman line",
+          "symbol": "1",
+          "value": 1,
+          "unit": "–",
+          "type": "Calc",
+          "note": "At n·σ the point lies on the line",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: n·σa/Se + n·σm/Sut",
+          "symbol": "chk",
+          "value": 1,
+          "unit": "–",
+          "type": "Check",
+          "note": "Must equal 1",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |exp − chk| / chk",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B11",
+      "title": "Grain-size strengthening (Hall–Petch)",
+      "equation": "Equation: σy = σ0 + ky / √d",
+      "assumptions": "Valid for typical polycrystalline grains (≈ µm–tens of µm); breaks down at nanoscale. σ0, ky below are ASSUMED illustrative values (order of magnitude for mild steel), not fitted data.",
+      "steps": [
+        {
+          "quantity": "Friction stress",
+          "symbol": "σ0",
+          "value": 70,
+          "unit": "MPa",
+          "type": "Input",
+          "note": "Assumed illustrative",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Hall–Petch slope",
+          "symbol": "ky",
+          "value": 0.6,
+          "unit": "MPa·m^½",
+          "type": "Input",
+          "note": "Assumed illustrative",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Grain diameter",
+          "symbol": "d",
+          "value": 0.00002,
+          "unit": "m",
+          "type": "Input",
+          "note": "20 µm assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Yield strength",
+          "symbol": "σy",
+          "value": 204.164078649987,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: mm units",
+          "symbol": "σy_chk",
+          "value": 204.164078649987,
+          "unit": "MPa",
+          "type": "Check",
+          "note": "ky converted to MPa·mm^½",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − sy| / sy",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B12",
+      "title": "ASTM E112 grain size number",
+      "equation": "Equation: n = 2^(G−1) grains per in² at 100× ; real grains/mm² = n ÷ (25.4/100)² ; d ≈ √(area) (square-grain approx.)",
+      "assumptions": "Single-phase equiaxed structure; planimetric definition.",
+      "steps": [
+        {
+          "quantity": "ASTM grain size number",
+          "symbol": "G",
+          "value": 8,
+          "unit": "–",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "mm per inch",
+          "symbol": "in",
+          "value": 25.4,
+          "unit": "mm",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Magnification",
+          "symbol": "M",
+          "value": 100,
+          "unit": "×",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Grains per in² at 100×",
+          "symbol": "n",
+          "value": 128,
+          "unit": "1/in²",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Real area represented by 1 in² at 100×",
+          "symbol": "a",
+          "value": 0.064516,
+          "unit": "mm²",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Grains per mm²",
+          "symbol": "N",
+          "value": 1984.00396800794,
+          "unit": "1/mm²",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Mean grain size (square-grain approx.)",
+          "symbol": "d",
+          "value": 22.4506403026729,
+          "unit": "µm",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "ASTM tabulated mean grain diameter, G=8 (recalled)",
+          "symbol": "d_ref",
+          "value": 22.5,
+          "unit": "µm",
+          "type": "Input",
+          "note": "Recalled table value — not re-fetched",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.02,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − dd| / dd",
+          "symbol": "Δrel",
+          "value": 0.00219858750849255,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B13",
+      "title": "Carbon equivalent (IIW)",
+      "equation": "Equation: CE = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15  (wt%)",
+      "assumptions": "Weldability screening only; preheat depends on thickness, hydrogen level, restraint and code. Illustrative composition.",
+      "steps": [
+        {
+          "quantity": "Carbon",
+          "symbol": "C",
+          "value": 0.2,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Manganese",
+          "symbol": "Mn",
+          "value": 0.9,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Chromium",
+          "symbol": "Cr",
+          "value": 0.05,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Molybdenum",
+          "symbol": "Mo",
+          "value": 0,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Vanadium",
+          "symbol": "V",
+          "value": 0,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Nickel",
+          "symbol": "Ni",
+          "value": 0.05,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Copper",
+          "symbol": "Cu",
+          "value": 0.05,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Carbon equivalent",
+          "symbol": "CE",
+          "value": 0.366666666666667,
+          "unit": "wt%",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: term by term",
+          "symbol": "CE_chk",
+          "value": 0.366666666666667,
+          "unit": "wt%",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − CE| / CE",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B14",
+      "title": "Pitting resistance equivalent number (PREN)",
+      "equation": "Equation: PREN = %Cr + 3.3·%Mo + 16·%N",
+      "assumptions": "Ranking index only (no unique N factor; Mn/S/W variants exist); not a service guarantee. Illustrative mid-range 2205 composition.",
+      "steps": [
+        {
+          "quantity": "Chromium",
+          "symbol": "Cr",
+          "value": 22.5,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Molybdenum",
+          "symbol": "Mo",
+          "value": 3.2,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Nitrogen",
+          "symbol": "N",
+          "value": 0.17,
+          "unit": "wt%",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "PREN",
+          "symbol": "PREN",
+          "value": 35.78,
+          "unit": "–",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: fraction form",
+          "symbol": "PREN_chk",
+          "value": 35.78,
+          "unit": "–",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − PREN| / PREN",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B15",
+      "title": "Larson–Miller creep parameter",
+      "equation": "Equation: LMP = T·(C + log10 t) ;  T in K, t in h",
+      "assumptions": "C ≈ 20 is a typical default; alloy-specific C and the stress–LMP master curve must come from creep test data (ASTM E139).",
+      "steps": [
+        {
+          "quantity": "Temperature",
+          "symbol": "T",
+          "value": 600,
+          "unit": "°C",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Larson–Miller constant",
+          "symbol": "C",
+          "value": 20,
+          "unit": "–",
+          "type": "Input",
+          "note": "Assumed typical",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Rupture time",
+          "symbol": "t",
+          "value": 1000,
+          "unit": "h",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Temperature",
+          "symbol": "T",
+          "value": 873.15,
+          "unit": "K",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Larson–Miller parameter",
+          "symbol": "LMP",
+          "value": 20082.45,
+          "unit": "K",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: invert for t",
+          "symbol": "t_chk",
+          "value": 1000,
+          "unit": "h",
+          "type": "Check",
+          "note": "Should return t",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |t − chk| / chk",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B16",
+      "title": "Hardness–UTS approximation (steels)",
+      "equation": "Equation: UTS ≈ 3.45 × HBW  (MPa)",
+      "assumptions": "Carbon & low-alloy steels only (roughly 150–450 HBW); not for austenitic SS, cold-worked or cast irons; ±~10% scatter; for estimates, not acceptance.",
+      "steps": [
+        {
+          "quantity": "Brinell hardness",
+          "symbol": "HBW",
+          "value": 200,
+          "unit": "HBW",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Estimated UTS",
+          "symbol": "UTS",
+          "value": 690,
+          "unit": "MPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: 500·HBW psi → MPa",
+          "symbol": "UTS_chk",
+          "value": 689.476,
+          "unit": "MPa",
+          "type": "Check",
+          "note": "psi→MPa factor 0.00689476",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − U| / U",
+          "symbol": "Δrel",
+          "value": 0.000759420289855074,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B17",
+      "title": "Archard wear (illustrative)",
+      "equation": "Equation: V = K·W·s / H",
+      "assumptions": "K is system-specific (from pin-on-disc type tests); no predictive use without test data. H = hardness of softer surface. Illustrative inputs.",
+      "steps": [
+        {
+          "quantity": "Wear coefficient",
+          "symbol": "K",
+          "value": 0.00001,
+          "unit": "–",
+          "type": "Input",
+          "note": "Assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Normal load",
+          "symbol": "W",
+          "value": 100,
+          "unit": "N",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Sliding distance",
+          "symbol": "s",
+          "value": 1000,
+          "unit": "m",
+          "type": "Input",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Hardness of softer body",
+          "symbol": "H",
+          "value": 2000000000,
+          "unit": "Pa",
+          "type": "Input",
+          "note": "2 GPa assumed",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Worn volume",
+          "symbol": "V",
+          "value": 5e-10,
+          "unit": "m³",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Worn volume",
+          "symbol": "V",
+          "value": 0.5,
+          "unit": "mm³",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Check: N/mm² route",
+          "symbol": "V_chk",
+          "value": 0.5,
+          "unit": "mm³",
+          "type": "Check",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.005,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − Vmm| / Vmm",
+          "symbol": "Δrel",
+          "value": 0,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    },
+    {
+      "id": "B18",
+      "title": "Isotropic elastic constants",
+      "equation": "Equation: G = E / (2(1+ν)) ;  K = E / (3(1−2ν))",
+      "assumptions": "Isotropic, linear-elastic; invalid for CFRP laminates/textured metals.",
+      "steps": [
+        {
+          "quantity": "E, AA 6061-T6 (Sheet 3)",
+          "symbol": "E",
+          "value": 68.9,
+          "unit": "GPa",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "ν, AA 6061-T6 (Sheet 3)",
+          "symbol": "ν",
+          "value": 0.33,
+          "unit": "–",
+          "type": "Linked",
+          "note": "Linked",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Shear modulus",
+          "symbol": "G",
+          "value": 25.9022556390977,
+          "unit": "GPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Bulk modulus",
+          "symbol": "K",
+          "value": 67.5490196078431,
+          "unit": "GPa",
+          "type": "Calc",
+          "note": "Not recorded",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Handbook shear modulus, 6061-T6 (recalled)",
+          "symbol": "G_ref",
+          "value": 26,
+          "unit": "GPa",
+          "type": "Input",
+          "note": "Recalled — not re-fetched",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Verification tolerance (relative)",
+          "symbol": "tol",
+          "value": 0.02,
+          "unit": "–",
+          "type": "Input",
+          "note": "Pass if |check − result| / result ≤ tol",
+          "status": "Not recorded"
+        },
+        {
+          "quantity": "Independent check: |chk − G| / G",
+          "symbol": "Δrel",
+          "value": 0.00377358490566033,
+          "unit": "–",
+          "type": "Status",
+          "note": "Relative difference between primary and independent route",
+          "status": "Verified"
+        }
+      ],
+      "status": "Verified"
+    }
+  ],
+  "calculators": [
+    {
+      "id": "B1",
+      "code": "density",
+      "name": "Density conversion",
+      "formula": "ρ (g/cm³) = ρ (kg/m³) / 1000"
+    },
+    {
+      "id": "B2",
+      "code": "thermal_exp",
+      "name": "Thermal expansion",
+      "formula": "ΔL = α × L₀ × ΔT"
+    },
+    {
+      "id": "B3",
+      "code": "wire_resistance",
+      "name": "Wire resistance",
+      "formula": "R = ρₑ × L / A"
+    },
+    {
+      "id": "B4",
+      "code": "specific_str",
+      "name": "Specific strength",
+      "formula": "σ_sp = σ (MPa) × 1000 / ρ (kg/m³)  [kN·m/kg]"
+    },
+    {
+      "id": "B4b",
+      "code": "specific_stiff",
+      "name": "Specific stiffness",
+      "formula": "E_sp = E (GPa) × 1000 / ρ (kg/m³)  [MN·m/kg]"
+    },
+    {
+      "id": "B5",
+      "code": "stress_strain",
+      "name": "Stress / Strain / Hooke",
+      "formula": "σ = E × ε,  ε = σ / E,  E = σ / ε"
+    },
+    {
+      "id": "B6",
+      "code": "bending",
+      "name": "Bending stress",
+      "formula": "σ = M × c / I,  I (rect) = b×h³/12,  c = h/2"
+    },
+    {
+      "id": "B7",
+      "code": "torsion",
+      "name": "Torsion stress",
+      "formula": "τ = T × r / J,  J (solid) = π×d⁴/32"
+    },
+    {
+      "id": "B8",
+      "code": "fos",
+      "name": "Factor of safety",
+      "formula": "FoS = σ_allowable / σ_applied"
+    },
+    {
+      "id": "B9",
+      "code": "thermal_stress",
+      "name": "Thermal stress",
+      "formula": "σ_T = E × α × ΔT"
+    },
+    {
+      "id": "B10",
+      "code": "goodman",
+      "name": "Modified Goodman",
+      "formula": "σ_a/S_e + σ_m/S_u = 1/N"
+    },
+    {
+      "id": "B11",
+      "code": "hall_petch",
+      "name": "Hall–Petch",
+      "formula": "σ_y = σ_0 + k / √d  [illustrative only]"
+    },
+    {
+      "id": "B12",
+      "code": "grain_size",
+      "name": "ASTM E112 grain size",
+      "formula": "N = 2^(G-1),  n = N × A,  G = (log₂n) + 1"
+    },
+    {
+      "id": "B13",
+      "code": "carbon_equiv",
+      "name": "Carbon equivalent (IIW)",
+      "formula": "CE = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15"
+    },
+    {
+      "id": "B14",
+      "code": "pren",
+      "name": "PREN",
+      "formula": "PREN = %Cr + 3.3×%Mo + 16×%N"
+    },
+    {
+      "id": "B15",
+      "code": "larson_miller",
+      "name": "Larson–Miller",
+      "formula": "P = T × (C + log₁₀ tᵣ)  [°R×10³ or K×10³]"
+    },
+    {
+      "id": "B16",
+      "code": "hardness_uts",
+      "name": "Hardness → UTS",
+      "formula": "UTS (MPa) ≈ 3.45 × HBW  (carbon steels, approx)"
+    },
+    {
+      "id": "B17",
+      "code": "archard_wear",
+      "name": "Archard wear",
+      "formula": "V = K × W × L / H"
+    },
+    {
+      "id": "B18",
+      "code": "shear_modulus",
+      "name": "Isotropic elastic constants",
+      "formula": "G = E / (2 × (1 + ν))"
+    }
+  ]
+}

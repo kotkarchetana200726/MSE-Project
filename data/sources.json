@@ -1,0 +1,118 @@
+{
+  "sources": [
+    {
+      "source": "ASTM International",
+      "usedFor": "Standards catalogue (titles, editions, status)",
+      "url": "https://www.astm.org/",
+      "accessNote": "Standard texts are paywalled; only catalogue entries accessible online — not accessed in this session"
+    },
+    {
+      "source": "Bureau of Indian Standards (BIS)",
+      "usedFor": "IS catalogue / standards portal",
+      "url": "https://www.bis.gov.in/",
+      "accessNote": "Search IS number in the BIS catalogue — not accessed in this session"
+    },
+    {
+      "source": "ISO",
+      "usedFor": "ISO standards catalogue",
+      "url": "https://www.iso.org/",
+      "accessNote": "Not accessed in this session"
+    },
+    {
+      "source": "ASM International",
+      "usedFor": "ASM Handbooks (property data)",
+      "url": "https://www.asminternational.org/",
+      "accessNote": "Values recalled from general handbook knowledge, not re-fetched"
+    },
+    {
+      "source": "MatWeb",
+      "usedFor": "Typical material datasheets",
+      "url": "https://www.matweb.com/",
+      "accessNote": "Values recalled, not re-fetched"
+    },
+    {
+      "source": "NIST",
+      "usedFor": "Reference data",
+      "url": "https://www.nist.gov/",
+      "accessNote": "Not accessed"
+    },
+    {
+      "source": "The Aluminum Association",
+      "usedFor": "Alloy/temper designations",
+      "url": "https://www.aluminum.org/",
+      "accessNote": "Not accessed"
+    },
+    {
+      "source": "SSAB (Hardox)",
+      "usedFor": "Manufacturer datasheets",
+      "url": "https://www.ssab.com/",
+      "accessNote": "Manufacturer values change by revision; verify current datasheet"
+    },
+    {
+      "source": "Special Metals",
+      "usedFor": "Ni-alloy datasheets",
+      "url": "https://www.specialmetals.com/",
+      "accessNote": "Not accessed"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A1",
+      "text": "No network or authoritative-document access was available in this session; all property values and standard information were recalled from training knowledge and marked Conditionally verified or Unverified accordingly. Nothing is marked 'Verified' except arithmetic and unit checks."
+    },
+    {
+      "id": "A2",
+      "text": "'Verified' = checked against an authoritative source or independently recalculated; 'Conditionally verified' = consistent with recalled handbook/standard information but not checked against the document; 'Unverified' = cannot be confirmed or under-specified; 'Incorrect' = supplied claim contains an error."
+    },
+    {
+      "id": "A3",
+      "text": "Values labelled Typical are handbook-type figures; values labelled Specified minimum come from product standards and are not guaranteed design allowables."
+    },
+    {
+      "id": "A4",
+      "text": "All property values are room-temperature unless stated; test temperature column supplied."
+    },
+    {
+      "id": "A5",
+      "text": "Specific strength uses UTS if present, otherwise YS; specific stiffness uses E. Shear modulus is derived assuming isotropy."
+    },
+    {
+      "id": "A6",
+      "text": "Hall–Petch, Goodman, Archard and Larson–Miller worked examples use illustrative assumed parameters (labelled) — not fitted to a specific dataset."
+    },
+    {
+      "id": "A7",
+      "text": "Gap-list grades are suggestions and are excluded from coverage counts."
+    },
+    {
+      "id": "A8",
+      "text": "Cost entries are qualitative and unverified."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "U1",
+      "text": "Confirm current/withdrawn status of ASTM E164."
+    },
+    {
+      "id": "U2",
+      "text": "Confirm current edition/revision status of IS 1865 and all IS edition years in Standards sheet."
+    },
+    {
+      "id": "U3",
+      "text": "Check exact current titles (E165/E165M, E1444/E1444M, E1742/E1742M) in the ASTM catalogue."
+    },
+    {
+      "id": "U4",
+      "text": "Re-fetch grade-specific property values from ASM/manufacturer datasheets and record publication dates."
+    },
+    {
+      "id": "U5",
+      "text": "Resolve under-specified materials (ceramics, composites, CoCr, graphite, CuBe) by choosing exact grades."
+    },
+    {
+      "id": "U6",
+      "text": "Add fatigue, impact and fracture-toughness values with test conditions for critical grades."
+    }
+  ]
+}

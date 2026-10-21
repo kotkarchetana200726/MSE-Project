@@ -1,0 +1,222 @@
+[
+  {
+    "id": "E01",
+    "source": "Upload rows 28–30",
+    "originalClaim": "EN8, EN19, EN24 listed as grades",
+    "correction": "Legacy BS 970 designations (080M40, 709M40/708M40, 817M40); BS 970 withdrawn/replaced by BS EN 10083",
+    "reasoning": "Designations obsolete; modern grades similar but chemistry/test requirements differ",
+    "downstreamEffects": "No properties assigned to EN8/EN19/EN24; use C45/42CrMo4/34CrNiMo6 with EN 10083 specs",
+    "evidence": "Recalled standards history (not re-fetched)",
+    "status": "Incorrect"
+  },
+  {
+    "id": "E02",
+    "source": "Upload row 9",
+    "originalClaim": "'AISI 1045 / C45' implies equivalence",
+    "correction": "Treat as similar, not identical",
+    "reasoning": "AISI/SAE limits (Mn, P, S) differ from EN 10083-2 C45 ranges",
+    "downstreamEffects": "Properties in Sheet 3 recorded for AISI 1045 only",
+    "evidence": "Recalled chemistry limits",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E03",
+    "source": "Upload row 17",
+    "originalClaim": "'AISI 4140 / 42CrMo4'",
+    "correction": "Similar, not identical (Cr 0.80–1.10 vs 0.90–1.20; Mo 0.15–0.25 vs 0.15–0.30; Mn 0.75–1.00 vs 0.60–0.90, recalled)",
+    "reasoning": "Different chemistry windows can change hardenability",
+    "downstreamEffects": "Properties recorded for AISI 4140 only",
+    "evidence": "Recalled chemistry limits",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E04",
+    "source": "Upload row 52",
+    "originalClaim": "'AISI 52100 / 100Cr6'",
+    "correction": "Close, not identical; verify via ASTM A295 vs ISO 683-17",
+    "reasoning": "Cr/Mn/Si limits differ slightly",
+    "downstreamEffects": "Bearing-grade cleanliness must be specified separately",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E05",
+    "source": "Upload rows 31–44",
+    "originalClaim": "'SS 201/304/…' naming",
+    "correction": "Use ASTM A240 Type/UNS/EN 10088/IS 6911 designation",
+    "reasoning": "'SS xxx' is not a standard designation system",
+    "downstreamEffects": "Prevents 201/304 mix-ups in procurement",
+    "evidence": "Recalled UNS numbers",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E06",
+    "source": "Upload rows 23, 24, 55",
+    "originalClaim": "40Cr, 20CrMo, 65Mn",
+    "correction": "Chinese GB/T designations; no BIS/ASTM equivalence asserted",
+    "reasoning": "Equivalence requires published cross-reference",
+    "downstreamEffects": "No numerical properties recorded",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E07",
+    "source": "Upload rows 91–95, 122, 125, 126, 131, 132",
+    "originalClaim": "Trade names (Inconel, Monel, Hastelloy, Nitinol, Hardox)",
+    "correction": "Use UNS/ASTM designations; Hardox is SSAB-proprietary",
+    "reasoning": "Trade names are not standards",
+    "downstreamEffects": "Hardox properties = manufacturer datasheet",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E08",
+    "source": "Upload rows 111–121, 123, 124, 129",
+    "originalClaim": "Under-specified materials (PET-P, alumina, SiC, ZrO2, Si3N4, CFRP, GFRP, aramid, CoCr, graphite, CuBe)",
+    "correction": "Specify exact grade/class (purity, sinter route, layup, ASTM F75/F1537/F90, etc.)",
+    "reasoning": "Properties vary several-fold",
+    "downstreamEffects": "Only indicative ranges recorded, marked Low confidence",
+    "evidence": "Judgement",
+    "status": "Unverified"
+  },
+  {
+    "id": "E09",
+    "source": "Upload row 43",
+    "originalClaim": "Duplex 2205",
+    "correction": "UNS S32205 and older S31803 both exist (S32205 has tighter N/Cr/Mo limits)",
+    "reasoning": "Two UNS numbers cause confusion",
+    "downstreamEffects": "Property row uses S32205 A240 minima",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E10",
+    "source": "Upload row 44",
+    "originalClaim": "17-4 PH without condition",
+    "correction": "Condition H900–H1150 required",
+    "reasoning": "Strength/toughness vary strongly with ageing",
+    "downstreamEffects": "Property row recorded for H1025 only",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E11",
+    "source": "Upload rows 12–13",
+    "originalClaim": "IS 2062 E250/E350 without quality designation",
+    "correction": "Add A / BR / B0 / C and thickness band",
+    "reasoning": "Impact and test options depend on designation",
+    "downstreamEffects": "Properties listed as minima for ≤20 mm only",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E12",
+    "source": "Master prompt §5",
+    "originalClaim": "ASTM E3 described as 'preparation of metallographic specimens'",
+    "correction": "E3 is a Guide",
+    "reasoning": "Guides give recommendations, not acceptance criteria",
+    "downstreamEffects": "Reflected in Standards sheet",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E13",
+    "source": "Master prompt §5",
+    "originalClaim": "ASTM B117 as 'salt-spray testing'",
+    "correction": "It is an apparatus operating practice",
+    "reasoning": "Does not define pass/fail or predict life",
+    "downstreamEffects": "Never use B117 hours alone as a service-life claim",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E14",
+    "source": "Master prompt §5",
+    "originalClaim": "ASTM E165/E165M & E1444/E1444M titles 'examination'",
+    "correction": "Current titles use 'testing' (older editions 'examination') — confirm",
+    "reasoning": "Title wording varies by edition",
+    "downstreamEffects": "Titles flagged Conditionally verified",
+    "evidence": "Recalled",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E15",
+    "source": "Master prompt §5",
+    "originalClaim": "ASTM E164 status",
+    "correction": "Current/withdrawn status could not be confirmed",
+    "reasoning": "No authoritative access",
+    "downstreamEffects": "Marked Unverified",
+    "evidence": "—",
+    "status": "Unverified"
+  },
+  {
+    "id": "E16",
+    "source": "Master prompt §5",
+    "originalClaim": "IS 1865 edition not known",
+    "correction": "Edition/revision status unverified",
+    "reasoning": "BIS catalogue not accessible",
+    "downstreamEffects": "Marked Unverified",
+    "evidence": "—",
+    "status": "Unverified"
+  },
+  {
+    "id": "E17",
+    "source": "Upload test notes",
+    "originalClaim": "Tests listed without standards for metals",
+    "correction": "Added ASTM/ISO/IS references in Testing Methods",
+    "reasoning": "Improves traceability",
+    "downstreamEffects": "See Sheet 'Testing Methods'",
+    "evidence": "—",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E18",
+    "source": "Upload (scope)",
+    "originalClaim": "No crystal structure/grain/microstructure fields",
+    "correction": "Added qualified crystal structure, phases and grain notes",
+    "reasoning": "Requested by user; avoids family-wide single structure",
+    "downstreamEffects": "See 'Grain & Crystal Structure'",
+    "evidence": "—",
+    "status": "Conditionally verified"
+  },
+  {
+    "id": "E19",
+    "source": "Upload (scope)",
+    "originalClaim": "AM, super-duplex, PH, Indian alloy steels missing",
+    "correction": "Added gap-list candidates (not counted in coverage)",
+    "reasoning": "Important for robotics/aerospace/Indian procurement",
+    "downstreamEffects": "Bottom of Master Material Database",
+    "evidence": "—",
+    "status": "Unverified"
+  },
+  {
+    "id": "E20",
+    "source": "Master prompt §2",
+    "originalClaim": "CTE unit µm/(m·K) = µm/(m·°C)",
+    "correction": "Correct for temperature differences",
+    "reasoning": "Kelvin and Celsius intervals are equal",
+    "downstreamEffects": "—",
+    "evidence": "Unit analysis",
+    "status": "Verified"
+  },
+  {
+    "id": "E21",
+    "source": "Master prompt §3",
+    "originalClaim": "Supplied formulas (ρ, ΔL, R, σ/ρ, E/ρ)",
+    "correction": "Dimensionally correct",
+    "reasoning": "Checked in worksheet with independent recalculation",
+    "downstreamEffects": "See Formulas sheet",
+    "evidence": "Computed in workbook",
+    "status": "Verified"
+  },
+  {
+    "id": "E22",
+    "source": "Master prompt §8",
+    "originalClaim": "Target 90–95% verified coverage",
+    "correction": "Not achievable in this session: no network/authoritative source access",
+    "reasoning": "Strict coverage counts only items checked against official documents",
+    "downstreamEffects": "Coverage reported as strict and conditional",
+    "evidence": "Executive Summary",
+    "status": "Unverified"
+  }
+]
