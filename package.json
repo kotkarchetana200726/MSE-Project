@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "node tools/server.js 8080",
+    "dev": "node tools/server.js 8080"
+  },
   "dependencies": {
     "pdf-parse": "^2.4.5",
     "xlsx": "^0.18.5"
